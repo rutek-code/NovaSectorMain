@@ -51,6 +51,23 @@ GLOBAL_LIST_INIT(balls_size_translation, list(
 	"6" = "Gargantuan"
 	))
 
+GLOBAL_LIST_INIT(genital_fluid_translation, list(
+	"Cum" = /datum/reagent/consumable/cum
+	"Femcum" = /datum/reagent/consumable/femcum
+	"Breast Milk" = /datum/reagent/consumable/breast_milk
+	"Beer" = /datum/reagent/consumable/ethanol/beer
+	"Caramel" = /datum/reagant/consumable/caramel
+	"Carbon" = /datum/reagant/carbon
+	"Crocin" = /datum/reagent/drug/aphrodisiac/crocin
+	"Honey" = /datum/reagent/consumable/honey
+	"Milk" = /datum/reagent/consumable/milk
+	"Oil" = /datum/reagant/fuel/oil
+	"Soy Milk" = /datum/reagent/consumable/soymilk
+	"Space Drugs" = /datum/reagant/drug/space_drugs
+	"Sugar" = /datum/reagant/consumable/sugar
+	"Water" = /datum/reagant/water
+	))
+
 GLOBAL_LIST_INIT(marking_zone_to_bitflag, list(
 	BODY_ZONE_HEAD = HEAD,
 	BODY_ZONE_CHEST = CHEST,
@@ -81,6 +98,24 @@ GLOBAL_LIST_INIT(preference_balls_sizes, list(
 	"Enormous",
 	"Immense",
 	"Gargantuan"
+	))
+
+// A small side effect of this implementation (as I don't want to make 3 separate lists for each genital) is that all genital types can any fluids in this list.
+GLOBAL_LIST_INIT(preference_genital_fluid_types, list(
+	"Cum"
+	"Femcum"
+	"Breast Milk"
+	"Beer"
+	"Caramel"
+	"Carbon"
+	"Crocin"
+	"Honey"
+	"Milk"
+	"Oil"
+	"Soy Milk"
+	"Space Drugs"
+	"Sugar"
+	"Water"
 	))
 
 GLOBAL_LIST_INIT(robotic_styles_list, list(

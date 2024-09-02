@@ -8,3 +8,7 @@
 		size = DNA.features["balls_size"]
 
 	internal_fluid_maximum = size * 20
+
+	var/internal_fluid_type = "cum"
+	if(DNA.features["cum_type"] != "cum")
+		cum_type = DNA.features["cum_type"]

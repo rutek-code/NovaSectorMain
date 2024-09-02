@@ -5,6 +5,9 @@
 	/// The maximum amount of fluid that can be stored in the genital.
 	var/internal_fluid_maximum = 0
 
+	/// The type of fluid produced by the genital.
+	var/internal_fluid_type
+
 	/// The datum to be used for the tracked fluid, should it need to be added to a fluid container.
 	var/internal_fluid_datum
 

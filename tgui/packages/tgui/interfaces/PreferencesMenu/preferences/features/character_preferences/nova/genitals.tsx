@@ -115,6 +115,15 @@ export const balls_size: FeatureNumeric = {
   component: FeatureNumberInput,
 };
 
+export const cum_type: Feature<string> = {
+  name: 'Cum Type',
+  component: (
+    props: FeatureValueProps<string, string, FeatureChoicedServerData>,
+  ) => {
+    return <FeatureDropdownInput buttons {...props} />;
+  },
+};
+
 export const feature_vagina: Feature<string> = {
   name: 'Vagina Choice',
   component: (
@@ -143,6 +152,15 @@ export const vagina_emissive: Feature<boolean[]> = {
   name: 'Vagina Emissives',
   description: 'Emissive parts glow in the dark.',
   component: FeatureTriBoolInput,
+};
+
+export const femcum_type: Feature<string> = {
+  name: 'Femcum Type',
+  component: (
+    props: FeatureValueProps<string, string, FeatureChoicedServerData>,
+  ) => {
+    return <FeatureDropdownInput buttons {...props} />;
+  },
 };
 
 export const feature_womb: Feature<string> = {
@@ -187,6 +205,15 @@ export const breasts_emissive: Feature<boolean[]> = {
 export const breasts_lactation_toggle: FeatureToggle = {
   name: 'Breast Lactation',
   component: CheckboxInput,
+};
+
+export const breastmilk_type: Feature<string> = {
+  name: 'Milk Type',
+  component: (
+    props: FeatureValueProps<string, string, FeatureChoicedServerData>,
+  ) => {
+    return <FeatureDropdownInput buttons {...props} />;
+  },
 };
 
 export const breasts_size: Feature<string> = {

@@ -368,6 +368,18 @@
 /datum/preference/numeric/balls_size/create_default_value()
 	return 2
 
+// CUM
+
+/datum/preference/choiced/cum
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "cum_type"
+
+/datum/preference/choiced/cum/apply_to_human(mob/living/carbon/human/target, value)
+	target.dna.features["cum_type"] = value
+
+/datum/preference/choiced/cum/create_default_value()
+	return "cum"
+
 // VAGINA
 
 /datum/preference/choiced/genital/vagina
@@ -405,6 +417,18 @@
 	relevant_mutant_bodypart = ORGAN_SLOT_VAGINA
 	type_to_check = /datum/preference/choiced/genital/vagina
 	skin_color_type = /datum/preference/toggle/genital_skin_color/vagina
+
+// FEMCUM
+
+/datum/preference/choiced/femcum
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "femcum_type"
+
+/datum/preference/choiced/femcum/apply_to_human(mob/living/carbon/human/target, value)
+	target.dna.features["femcum_type"] = value
+
+/datum/preference/choiced/cum/create_default_value()
+	return "femcum"
 
 // UTERUS
 
@@ -489,6 +513,25 @@
 
 /datum/preference/choiced/breasts_size/create_default_value()
 	return BREAST_SIZE_C
+
+// BREAST MILK
+
+/datum/preference/choiced/breastmilk
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "breastmilk_type"
+
+/datum/preference/choiced/breastmilk/apply_to_human(mob/living/carbon/human/target, value)
+	target.dna.features["breastmilk_type"] = value
+
+/datum/preference/choiced/cum/create_default_value()
+	return "breast_milk"
+
+/datum/preference/choiced/breastmilk/is_accessible(datum/preferences/preferences)
+	var/passed_initial_check = ..(preferences)
+	var/allowed = preferences.read_preference(/datum/preference/toggle/allow_mismatched_parts)
+	var/erp_allowed = preferences.read_preference(/datum/preference/toggle/master_erp_preferences) && preferences.read_preference(/datum/preference/toggle/breasts_lactation)
+	var/part_enabled = is_factual_sprite_accessory(relevant_mutant_bodypart, preferences.read_preference(/datum/preference/choiced/genital/breasts))
+	return erp_allowed && part_enabled && (passed_initial_check || allowed)
 
 // ANUS
 

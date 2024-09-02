@@ -16,3 +16,7 @@
 		if("sextuple")
 			breasts_capacity = 3
 	internal_fluid_maximum = size * breasts_capacity * 60 // This seems like it could balloon drastically out of proportion with larger breast sizes.
+
+	var/internal_fluid_type = "breast_milk"
+	if(DNA.features["breastmilk_type"] != "breast_milk")
+		breastmilk_type = DNA.features["breastmilk_type"]

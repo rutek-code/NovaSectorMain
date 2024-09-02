@@ -4,3 +4,7 @@
 /obj/item/organ/external/genital/vagina/build_from_dna(datum/dna/DNA, associated_key)
 	. = ..()
 	internal_fluid_maximum = 10
+
+	var/internal_fluid_type = "femcum"
+	if(DNA.features["femcum_type"] != "femcum")
+		cum_type = DNA.features["femcum_type"]
